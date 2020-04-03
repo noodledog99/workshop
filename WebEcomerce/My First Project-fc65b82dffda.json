@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "primal-stock-270906",
+  "private_key_id": "fc65b82dffdabfca0ff9d004e5e6ce1f5ac6ffa1",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDxT7E6NJl7jL9j\nCyI+dois5bEOig/SdAGNDriC5gArRlkpLFE74YCTnUHMmi9SeG78LpZKlHA0JH97\nD+2gJlA6ZLb9n4/+PWHqhXYumHmY7cqVhXNkAPx6qVxIzklwkqlwyWz+nqZQVBIm\nwBH8kaqK2J4U91A0gG89V1HeC9DLAYZlQIeRMpSl/jjRN7PrmeOB8G8apFfco2Wl\ntBYoT6pZEE8vrxDLjmoijuFSDIkfSSoYk4NAwGySjkZRCF6FMTBITUg1M8+Nx4ee\nxjUfmanLwsFEMY+lGaZoXxakgWleGw/rPC+DVELUtXDPf7xc+pZnkcmH5ZV5Mr1m\n/r6uISzDAgMBAAECggEAaU0r2ujyIwp3x+onXteN69jtqxkPL3ik5p+KX8CrSTcR\nGFj49+b/GytP988+oD/iupQ/zDq7Pd3BbXu1Z6Hgd6LUgZd8F+dET7k+qbWqtlPq\nB9Zs1LJjesll9nViccfmPcwADpo/nCUbqKI/Fxafs6g0T5TegJKdOEje9kT0r2jZ\ngZ/0cmrVCuSHnXTbfzxXDRNEt0QEN0Kc9FG4wwCaCkfOywscG40aFqoI5iRWJt/u\nmqw4HdCgFX9HDW5VF77UbDoqIZpRrTVnVYHNr73bepFXThJCrj9o255TJqQCcVO5\nOEksbz+w28dzWOMViWfWw2f2EgfKkn/nCZegFY1+vQKBgQD8Mc+3gt8kEHPpSWaI\nFXwUKdLF1t1/uLqwpdINc9o217NiWaJVWGu5zf2ione6fPPOrMWH5P6dHfVB1M3h\nHYxPZXeoPdu4g6ve68FgXfG3zHMxt7f2uHl1pyXdEYmWGN1S018CDrZo+5Zq2fKr\nJM7ZuCrARa8lJniJInc7W48tBwKBgQD089cp6rtxf+mqqV4b3JAgkQpJmX1rbRNm\nPX6it+ABVZCHrSWKPedGvGCERyICoIrY25jkbcY5cLo5BRW1NmAm1AhIZB5xtrFO\nPG2Mdq6kvxJjH4VgE990UOzTZI/ckW43FZ0WUi73sVjJSq47uvL8xXhvA93XFqUe\nWHDHbbcPZQKBgQCcaiyBjerlzEqHyx2Lk3+0ZcgzKjOQzrsDaqUf8NXLo/a/Lgav\n1jpiMC96WjfV8z+n1KJiyZVdT0JZBSp3z8LBT5ZqQ4tuIkRL636xTTLpIyXjFSZF\nIF88qGGkfgcOj/ddMnm/pe5eqIO/W9PVb+vXPxFM1Stu6DBkJXs71mqzqwKBgQDi\njGdy0DOerKQrgEuWzy7Jv/tYyMnzwkUP6U4nJpLaCQ4MPfqbWdd+V5mYncV50ou4\nN5m3o0OTOowxUl+aYvkY0D/83ARAPazM5ByZreamXkWeQbf0fUzM4k+2z6oyYJsj\n/Sx1SXtBANhSC20Lt0Mmv2g8nMHfPYVnhHqCKBoH9QKBgQDiEkvvkl5XJywhDBYu\nn9L7oJmX6gvczXqJI7dANBxtoVbgMAi3JHptvWEafPii3YtRmM9SjAuO3Qwk4xqd\nAngFkAX5ZH+PRcTR3UT0y3UV01dj9D0/2wGMo8p8XtZlg3aKfwtYjjG0u86yjLWi\n03h2a515XAvyNG4+fhjHwkVWwQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "image-storage-upload@primal-stock-270906.iam.gserviceaccount.com",
+  "client_id": "112724367551041496806",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/image-storage-upload%40primal-stock-270906.iam.gserviceaccount.com"
+}
