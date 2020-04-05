@@ -3,40 +3,89 @@
 }
 
 <style>
-    body{
+    body {
         background-color: #383838;
     }
-    .display-4{
+
+    .display-4,
+    .display-descripton {
         color: white;
         text-align: center;
+        font-weight: 700;
     }
+
+    .display-descripton {
+        font-weight: 300;
+        font-size: 22px;
+    }
+
+    .font-title {
+        padding: 25px 0;
+    }
+
+    .img-box {
+        max-width: 290px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0);
+        transition: background 0.5s ease;
+    }
+
+    .img-box:hover .overlay {
+        display: block;
+        background: rgba(0, 0, 0, .7);
+    }
+
+    .img-box img {
+        width: 100%;
+        transition: transform .5s ease;
+    }
+
+    .btn-view {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 12px 48px;
+        opacity: 0;
+        transition: opacity .35s ease;
+        text-align: center;
+        color: white;
+        border: solid 2px white;
+        z-index: 1;
+        cursor: pointer;
+        font-weight:500;
+        font-size: 18px;
+    }
+
+    .img-box:hover .btn-view {
+        opacity: 1;
+    }
+
+   
 </style>
 
-<div>
+<div class="font-title">
     <h3 class="display-4">Keycaps</h3>
+    <p class="display-descripton">Engineered for the ultimate typing experience</p>
 </div>
 <div class="row">
-    @* @foreach (var product in Model)
-    {
-        <div class="col-md-3">
-            <div class="card h-100">
-                <img class="card-img-top" src="@product.ImagePath" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">@product.ProductName</h5>
-                    <p class="card-text"><small class="text-muted">฿@string.Format("{0:N}", @product.Price)</small></p>
-                </div>
-                <div class="card-body">
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-    } *@
     @foreach (var product in Model)
     {
         <div class="col-md-4">
             <div class="product">
                 <div class="img-box">
                     <img src="@product.ImagePath">
+                    <div class="overlay"></div>
+                    <div class="btn-view" onclick="location.href='@Url.Action("ViewProduct", "Home", new { id = @product.Id })'"> View </div>
                 </div>
                 <p class="title">@product.ProductName</p>
                 <p class="price">฿@string.Format("{0:N}", @product.Price)</p>

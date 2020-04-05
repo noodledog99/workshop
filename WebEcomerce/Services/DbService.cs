@@ -18,8 +18,6 @@ namespace Demoecomerce.Services
 
             CollectionProduct = database.GetCollection<Product>(dbConfig.Product);
             CollectionUser = database.GetCollection<User>(dbConfig.User);
-
         }
-
     }
 }

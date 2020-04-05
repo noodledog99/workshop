@@ -32,7 +32,7 @@
                         <tr>
                             <th scope="row">@i</th>
                             <td>@product.ProductName</td>
-                            <td>@string.Format("{0:N}", @product.Price)</td>
+                            <td>฿@string.Format("{0:N}", @product.Price)</td>
                             <td>@product.Amount</td>
                             <td class="d-flex flex-wrap justify-content-around align-items-md-center">
                                 <button class="btn btn-info" onclick="location.href='@Url.Action("Detail", "Admin", new { id = @product.Id })'">View</button>

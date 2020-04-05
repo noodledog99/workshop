@@ -13,24 +13,27 @@
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
               crossorigin="anonymous"
-              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"/>
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
     </environment>
     <link rel="stylesheet" href="~/css/site.css" />
     <script src="https://kit.fontawesome.com/9e4462ff45.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-black box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">KCShop</a>
+                <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index">KCShop</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1 justify-content-end">
-                        <li class="nav-item ">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="ManageProduct">Manage</a>
+                    <ul class="navbar-nav flex-grow-1 justify-content-end align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Admin" asp-action="ManageProduct">Manage</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-outline-white" asp-area="" asp-controller="Admin" asp-action="ManageProduct">Sign in</a>
                         </li>
                     </ul>
                 </div>
@@ -44,9 +47,20 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="footer text-muted">
         <div class="container">
-            &copy; 2020 - WebEcomerce - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <div class="footer_item">
+                <ul class="inline-list test footer__social">
+                    <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                    <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                    <li><a href=""><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer_item">
+                <p> &copy; 2020 - WebEcomerce - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></p>
+            </div>
+
         </div>
     </footer>
 

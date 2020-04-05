@@ -2703,6 +2703,17 @@ fieldset:disabled a.btn {
   border-color: #007bff;
 }
 
+.btn-outline-white {
+  color: #fff ;
+  border-color: white;
+}
+
+.btn-outline-white:hover {
+  color: black;
+  background-color: white;
+  border-color: white;
+}
+
 .btn-outline-primary:focus, .btn-outline-primary.focus {
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
 }
@@ -4190,7 +4201,7 @@ input[type="button"].btn-block {
   -ms-flex-direction: column;
   flex-direction: column;
   padding-left: 0;
-  margin-bottom: 0;
+  /* margin-bottom: 0; */
   list-style: none;
 }
 

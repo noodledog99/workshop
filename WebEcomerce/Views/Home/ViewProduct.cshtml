@@ -1,0 +1,85 @@
+﻿@model WebEcomerce.Models.Product
+
+@{
+    ViewData["Title"] = "ViewProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style type="text/css">
+    body {
+        background-color: #383838;
+        color: white;
+    }
+
+    .box-img {
+        max-width: 600px;
+    }
+
+        .box-img img {
+            width: 100%;
+        }
+
+    .btn-add {
+        border: 3px solid white;
+        padding: 10px 10px;
+        background: #383838;
+        box-shadow: 10px 10px white;
+        font-size: 20px;
+        font-weight: 500;
+        color: white;
+    }
+
+    .item-detail {
+        padding: 10px 0;
+    }
+
+    .product_title h1 {
+        font-size: 2.3rem;
+    }
+
+    .item-detail h1 {
+        font-size: 2.3rem;
+    }
+
+    p.product_amount {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    p.product_price {
+        font-weight: 700;
+    }
+
+    h1.title {
+        font-size: 2.2em;
+    }
+
+   
+</style>
+
+<div class="row mb-5 mt-5">
+    <div class="col-sm-12 col-md-7 col-lg-7 d-flex flex-column justify-content-center">
+        <div class="box-img">
+            <img src="@Model.ImagePath" alt="">
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-5 col-lg-5 d-flex flex-column justify-content-center">
+        <div class="item-detail">
+            <h1 class="title">@Model.ProductName</h1>
+        </div>
+        <div class="item-detail">
+            <p>
+                @Model.ProductDetail
+            </p>
+        </div>
+        <div class="item-detail">
+            <p class="product_price">฿@Model.Price</p>
+            <p class="product_amount">Amount</p>
+            <p>@Model.Amount</p>
+        </div>
+        <div class="item-detail">
+            <button class="btn-add btn-block">ADD TO CART</button>
+        </div>
+    </div>
+</div>
+

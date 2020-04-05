@@ -2,30 +2,33 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Demoecomerce.Reponsitories;
 using Microsoft.AspNetCore.Mvc;
 using WebEcomerce.Models;
+using WebEcomerce.Services;
 
 namespace WebEcomerce.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IProductRepository productRepository;
-        private Product modelProduct = new Product();
+        private readonly APIService _apiService;
 
-        public HomeController(IProductRepository productRepository)
+        public HomeController()
         {
-            this.productRepository = productRepository;
+            _apiService = new APIService();
         }
-
-        public List<Product> GetProducts()
-            => productRepository.GetAllProduct().Where(it => it.Deleted_at == null).ToList();
-        
 
         public IActionResult Index()
         {
-            return View(GetProducts());
+            return View(_apiService.GetProducts());
+        }
+
+        [HttpGet]
+        public IActionResult ViewProduct(string id)
+        {
+            return View(_apiService.GetProduct(id));
         }
 
         public IActionResult Privacy()

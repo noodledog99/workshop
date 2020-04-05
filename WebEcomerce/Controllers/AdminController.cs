@@ -11,6 +11,8 @@ using Google.Cloud.Storage.V1;
 using System.Net.Http.Headers;
 using System.Text;
 using System.IO;
+using System.Net.Http;
+using WebEcomerce.Services;
 
 namespace WebEcomerce.Controllers
 {
@@ -18,27 +20,20 @@ namespace WebEcomerce.Controllers
     {
         private readonly IProductRepository productRepository;
         private Product modelProduct = new Product();
-        private List<Product> products = new List<Product>();
+        private readonly APIService _apiService;
         public AdminController(IProductRepository productRepository)
         {
+            _apiService = new APIService();
             this.productRepository = productRepository;
-            this.products = productRepository.GetAllProduct().ToList();
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", @"D:\Work\Workshopecomerce\WebEcomerce\My First Project-fc65b82dffda.json");
         }
 
         [HttpGet]
         public IActionResult ManageProduct()
         {
-            if (this.products.Any())
-            {
-                return View(this.products.Where(it => it.Deleted_at == null).ToList());
-            }
-            else
-            {
-                return View();
-            }
+            var products = _apiService.GetProducts();
+            return View(products);
         }
-
 
         public IActionResult Add()
         {
@@ -48,24 +43,23 @@ namespace WebEcomerce.Controllers
         [HttpPost]
         public IActionResult Add(string ProductName, string ProductDetail, double Price, int Amount, IFormFile ImagePath)
         {
-            var time = (int)(DateTime.UtcNow.ToLocalTime() - new DateTime(2020, 1, 1)).TotalSeconds;
-            var objectName = $"test/{time.ToString()}.png";
             modelProduct.Id = Guid.NewGuid().ToString();
             modelProduct.ProductName = ProductName;
             modelProduct.ProductDetail = ProductDetail;
             modelProduct.Price = Price;
             modelProduct.Amount = Amount;
-            modelProduct.ImagePath = UploadFile("storage-image-test", ImagePath, objectName);
+            modelProduct.ImagePath = UploadFile("storage-image-test", ImagePath);
             modelProduct.Created_at = DateTime.Now;
-            productRepository.Create(modelProduct);
-            return RedirectToAction("ManageProduct");
+            var response = _apiService.AddProducts(modelProduct);
+            if (response)
+            {
+                return RedirectToAction("ManageProduct");
+            }
+            else
+            {
+                return RedirectToAction("Add");
+            }
         }
-
-        //public string UploadImage() 
-        //{
-        //    var time = (int)(DateTime.UtcNow.ToLocalTime() - new DateTime(2020, 1, 1)).TotalSeconds;
-        //    var objectName = $"test/{time.ToString()}.png";
-        //}
 
         [HttpGet]
         public IActionResult Edit(string id)
@@ -81,7 +75,7 @@ namespace WebEcomerce.Controllers
             return RedirectToAction("ManageProduct");
         }
 
-        
+        [HttpPost]
         public IActionResult DeleteProduct(string id)
         {
             var product = productRepository.Get(it => it.Id == id);
@@ -95,8 +89,10 @@ namespace WebEcomerce.Controllers
             return View(productRepository.Get(it => it.Id == id));
         }
 
-        private string UploadFile(string bucketName, IFormFile localPath, string objectName = null)
+        private string UploadFile(string bucketName, IFormFile localPath)
         {
+            var time = (int)(DateTime.UtcNow.ToLocalTime() - new DateTime(2020, 1, 1)).TotalSeconds;
+            var objectName = $"test/{time.ToString()}.png";
             var storage = StorageClient.Create();
             storage.UploadObject(bucketName, objectName, null, localPath.OpenReadStream());
             var storageObject = storage.GetObject(bucketName, objectName);
