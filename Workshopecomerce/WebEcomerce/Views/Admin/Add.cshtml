@@ -1,0 +1,78 @@
+﻿@model WebEcomerce.Models.Product
+
+@{
+    ViewData["Title"] = "Add Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    body {
+        background: #3b3b3b;
+    }
+</style>
+<div class="container">
+
+    <div class="row">
+        <div class="col">
+            <form asp-action="Add" class="need-validation" enctype="multipart/form-data" novalidate>
+                <div class="card">
+                    <div class="card-header">
+                        Add
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <div class="row">
+                            <div class="col-md-7">
+                                <div class="form-group">
+                                    <label asp-for="ProductName" class="control-label"></label>
+                                    <input asp-for="ProductName" name="ProductName" class="form-control" />
+                                    <span asp-validation-for="ProductName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="ProductDetail" class="control-label"></label>
+                                    <textarea asp-for="ProductDetail" name="ProductDetail" class="form-control"></textarea>
+                                    <span asp-validation-for="ProductDetail" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Price" class="control-label"></label>
+                                    <input asp-for="Price" name="Price" min="0" class="form-control" />
+                                    <span asp-validation-for="Price" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Amount" class="control-label"></label>
+                                    <input asp-for="Amount" name="Amount" min="0" class="form-control" />
+                                    <span asp-validation-for="Amount" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <div class="preview-img text-center">
+                                        <img id="preview-img" src="~/images/default-img.png" alt="your image" />
+                                    </div>
+                                    <div class="custom-file">
+                                        <input asp-for="ImagePath" type="file" class="custom-file-input" id="ImagePath">
+                                        <label class="custom-file-label" for="ImagePath">Choose file</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-right">
+                        <div class="from-row">
+                            <a class="btn btn-outline-secondary" asp-action="ManageProduct">Back</a>
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@*<div>
+        <a asp-action="ManageProduct">Back to List</a>
+    </div>*@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

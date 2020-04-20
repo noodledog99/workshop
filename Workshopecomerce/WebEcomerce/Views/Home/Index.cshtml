@@ -1,0 +1,169 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    body {
+        background-color: #383838;
+    }
+
+    .display-4,
+    .display-descripton {
+        color: white;
+        text-align: center;
+        font-weight: 700;
+    }
+
+    .display-descripton {
+        font-weight: 300;
+        font-size: 22px;
+    }
+
+    .font-title {
+        padding: 25px 0;
+    }
+
+    .img-box {
+        max-width: 290px;
+        height: 265px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0);
+        transition: background 0.5s ease;
+    }
+
+    .img-box:hover .overlay {
+        display: block;
+        background: rgba(0, 0, 0, .7);
+    }
+
+    .img-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 50%;
+        transition: transform .5s ease;
+    }
+
+    .btn-view {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 12px 48px;
+        opacity: 0;
+        transition: opacity .35s ease;
+        text-align: center;
+        color: white;
+        border: solid 2px white;
+        z-index: 1;
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 18px;
+    }
+
+    .img-box:hover .btn-view {
+        opacity: 1;
+    }
+
+    .bg-banner {
+        background: url('./images/bg.jpg') 50% 50% no-repeat;
+        background-size: cover;
+        height: 780px;
+        width: 100%;
+        margin-top: -18px;
+    }
+
+    .banner-title {
+        position: relative;
+        top: 70px;
+        display: none;
+    }
+
+    hr {
+        border-top: 4px solid yellow;
+        margin: 0 auto;
+        -webkit-animation: hr-width 3s forwards;
+        animation: hr-width 3s forwards;
+    }
+
+    .hr-width:hover > hr {
+        width: 35%;
+    }
+
+    @@-webkit-keyframes hr-width {
+        from {
+            width: 7%;
+            transition: width 0.5s ease-out;
+            -webkit-transition: width 0.5s ease-out;
+        }
+
+        to {
+            width: 28%;
+        }
+    }
+
+    @@keyframes hr-width {
+        from {
+            width: 7%;
+            transition: width 0.5s ease-out;
+            -webkit-transition: width 0.5s ease-out;
+        }
+
+        to {
+            width: 28%;
+        }
+    }
+</style>
+
+<div class="bg-banner">
+    <div class="banner-title">
+        <div class="hr-width">
+            <h3 class="display-4 ">Our Products</h3>
+            <hr />
+        </div>
+        <p class="display-descripton">
+            Dive into a wide range of mechanical keyboards and peripherals
+        </p>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="font-title">
+        <h3 class="display-4">Keycaps</h3>
+        <p class="display-descripton">Engineered for the ultimate typing experience</p>
+    </div>
+    <div class="row">
+        @foreach (var product in Model)
+        {
+            <div class="col-md-3">
+                <div class="product">
+                    <div class="img-box">
+                        @if (@product.ImagePath != "")
+                        {
+                            <img src="@product.ImagePath">
+                        }
+                        else
+                        {
+                            <img src="~/images/default-img.png">
+                        }
+                        <div class="overlay"></div>
+                        <div class="btn-view" onclick="location.href='@Url.Action("ViewProduct", "Home", new { id = @product.Id })'"> View </div>
+                    </div>
+                    <p class="title">@product.ProductName</p>
+                    <p class="price">฿@string.Format("{0:N}", @product.Price)</p>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

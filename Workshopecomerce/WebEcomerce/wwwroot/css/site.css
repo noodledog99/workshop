@@ -1,0 +1,205 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+ul li.nav-item:nth-child(3) i {
+    color: black;
+    position: relative;
+    bottom: 0px;
+    font-size: 22px;
+}
+
+ul li.nav-item:nth-child(3) span {
+    color: white;
+    font-size: 9px;
+    font-weight: bold;
+    position: relative;
+    bottom: 6px;
+    width: 100%;
+}
+
+ul li.nav-item:nth-child(3) a {
+    width: 42px;
+    height: 42px;
+    background: white;
+    border-radius: 100%;
+    text-align: center;
+    position: relative;
+}
+
+ul li.nav-item:nth-child(3) .cart-number {
+    position: absolute;
+    left: 17px;
+    top: 19px;
+    border-radius: 100%;
+    background: black;
+    width: 19px;
+    height: 19px;
+}
+
+ul li.nav-item {
+    margin: 0 5px;
+}
+
+.nav-item i {
+    font-size: 22px;
+}
+
+.preview-img {
+    height: 330px;
+    /*height: 314px;*/
+    max-width: 425px;
+}
+
+    .preview-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 50%;
+    }
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #3f3f3f;
+}
+
+.border-bottom {
+    border-bottom: 1px solid black;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+ul {
+    margin-top:20px;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    position: relative;
+}
+
+.footer__social a {
+    display: block;
+    border-radius: 100%;
+    border: 2px solid #fff;
+    padding: 20px;
+    line-height: 1;
+}
+
+.footer__social li {
+    margin: 5px 5px 0;
+}
+
+.inline-list li {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+    margin-top: 40px;
+}
+
+i.fab {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 19px;
+}
+
+.footer_item {
+    text-align: center;
+}
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+.footer {
+    background: #3f3f3f;
+    /*position: absolute;*/
+    /*bottom: 0;*/
+    width: 100%;
+    white-space: nowrap;
+    /* Set the fixed height of the footer here */
+    /*height: 60px;*/
+    line-height: 60px; /* Vertically center the text there */
+}
+
+.product {
+    margin-top: 20px;
+    max-width: 290px;
+    margin: 0 auto;
+}
+
+/*.img-box {
+  max-width: 290px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.img-box img {
+  width: 100%;
+  transition: transform .5s ease;
+}*/
+
+.bg-black {
+    background-color: #1D1D1D !important;
+}
+
+p.title {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 500;
+    color: white;
+}
+
+p.price {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    color: aliceblue;
+}
+
+.img-box:hover img {
+    transform: scale(1.5);
+}
+
+ .btn {
+    border-radius: 0;
+} 
+
+.add-btn {
+    margin-bottom: 20px;
+}
